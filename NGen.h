@@ -2,6 +2,7 @@
 #define NAMEGENERATOR_H_
 #include <vector>
 #include <string>
+
 class NGen {
 private:
 	enum sex {MALE, FEMALE};
@@ -15,6 +16,7 @@ private:
 	std::string chosenName;
 	std::string chosenSurname;
 	bool sex;
+	void _shuffleAll();
 public:
 	NGen();
 	bool _getSex() const { return sex; }
@@ -30,16 +32,20 @@ private:
 	std::vector <std::string> _orc_Gnames;
 	std::vector <std::string> orc_Gprefixes;
 	std::vector <std::string> orc_Bprefixes;
+	std::vector <std::string> orc_Bsuffixes;
 	std::vector <std::string> orc_Gsuffixes;
 	std::vector <std::string> _orc_variable_Bsuffixes;
+	std::vector <std::string> _orc_variable_Gsuffixes;
 	std::string chosenName;
 	int randVariableBsuffix;
+	int randVariableGsuffix;
 	int randBPref;
 	int randGPref;
 	int randGSuff;
+	int _rand_orcBsuff;
+	void _shuffleAll();
 	std::string finalName;
 	void createName();
-	
 public:
 	OrcNames();
 	void showAvaibleNames() const;
@@ -55,12 +61,16 @@ private:
 	std::vector <std::string> elf_Bsuffixes;
 	std::vector <std::string> elf_Gsuffixes;
 	std::vector <std::string> elf_surnames;
+	std::vector <std::string> elf_Bsurnames_suffixes;
+	std::vector <std::string> elf_Gsurnames_suffixes;
 	std::string chosenName;
 	std::string chosenSurname;
 	int randBsuff;
 	int randGsuff;
+	int randSurname_Suff;
 	std::string finalName;
 	void createName();
+	void _shuffleAll();
 public:
 	ElfNames();
 	void showAvaibleNames() const;
@@ -75,12 +85,15 @@ private:
 	std::vector <std::string> dwarf_Bsuffixes;
 	std::vector <std::string> dwarf_Gsuffixes;
 	std::vector <std::string> dwarf_surnames;
+	std::vector <std::string> dwarf_surSuffs;
 	std::string chosenName;
 	std::string chosenSurname;
 	int randBsuff;
 	int randGsuff;
+	int rand_surSuff_numb;
 	std::string finalName;
 	void createName();
+	void _shuffleAll();
 public:
 	DwarfNames();
 	void showAvaibleNames() const;
